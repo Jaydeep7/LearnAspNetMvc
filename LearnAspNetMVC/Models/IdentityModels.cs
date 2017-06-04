@@ -25,6 +25,8 @@ namespace LearnAspNetMVC.Models
         {
         }
 
+        public DbSet<Item> Sells { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
