@@ -217,6 +217,10 @@
     <Compile Include="Migrations\201706051557342_DropAndAddIdColumnOfCategoryAndSetForeignKey1.Designer.cs">
       <DependentUpon>201706051557342_DropAndAddIdColumnOfCategoryAndSetForeignKey1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706051730021_InsertDataToCategoryTable.cs" />
+    <Compile Include="Migrations\201706051730021_InsertDataToCategoryTable.Designer.cs">
+      <DependentUpon>201706051730021_InsertDataToCategoryTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -326,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706051557342_DropAndAddIdColumnOfCategoryAndSetForeignKey1.resx">
       <DependentUpon>201706051557342_DropAndAddIdColumnOfCategoryAndSetForeignKey1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706051730021_InsertDataToCategoryTable.resx">
+      <DependentUpon>201706051730021_InsertDataToCategoryTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
