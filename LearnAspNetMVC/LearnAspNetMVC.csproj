@@ -185,6 +185,38 @@
     <Compile Include="Migrations\201706040551468_ConstraintsSetInCategoryAndItem.Designer.cs">
       <DependentUpon>201706040551468_ConstraintsSetInCategoryAndItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706051422269_InsertDataInCategoryTable.cs" />
+    <Compile Include="Migrations\201706051422269_InsertDataInCategoryTable.Designer.cs">
+      <DependentUpon>201706051422269_InsertDataInCategoryTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706051448564_TurnOffIndentityOnCategoryTable.cs" />
+    <Compile Include="Migrations\201706051448564_TurnOffIndentityOnCategoryTable.Designer.cs">
+      <DependentUpon>201706051448564_TurnOffIndentityOnCategoryTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706051449575_InsertDataInCategoryTable1.cs" />
+    <Compile Include="Migrations\201706051449575_InsertDataInCategoryTable1.Designer.cs">
+      <DependentUpon>201706051449575_InsertDataInCategoryTable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706051453446_InsertDataInCategoryTable2.cs" />
+    <Compile Include="Migrations\201706051453446_InsertDataInCategoryTable2.Designer.cs">
+      <DependentUpon>201706051453446_InsertDataInCategoryTable2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706051545389_RemoveIdentityFromCategory.cs" />
+    <Compile Include="Migrations\201706051545389_RemoveIdentityFromCategory.Designer.cs">
+      <DependentUpon>201706051545389_RemoveIdentityFromCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706051554006_DropCategoryForeignKey.cs" />
+    <Compile Include="Migrations\201706051554006_DropCategoryForeignKey.Designer.cs">
+      <DependentUpon>201706051554006_DropCategoryForeignKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706051555359_DropAndAddIdColumnOfCategoryAndSetForeignKey.cs" />
+    <Compile Include="Migrations\201706051555359_DropAndAddIdColumnOfCategoryAndSetForeignKey.Designer.cs">
+      <DependentUpon>201706051555359_DropAndAddIdColumnOfCategoryAndSetForeignKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706051557342_DropAndAddIdColumnOfCategoryAndSetForeignKey1.cs" />
+    <Compile Include="Migrations\201706051557342_DropAndAddIdColumnOfCategoryAndSetForeignKey1.Designer.cs">
+      <DependentUpon>201706051557342_DropAndAddIdColumnOfCategoryAndSetForeignKey1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -270,6 +302,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706040551468_ConstraintsSetInCategoryAndItem.resx">
       <DependentUpon>201706040551468_ConstraintsSetInCategoryAndItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706051422269_InsertDataInCategoryTable.resx">
+      <DependentUpon>201706051422269_InsertDataInCategoryTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706051448564_TurnOffIndentityOnCategoryTable.resx">
+      <DependentUpon>201706051448564_TurnOffIndentityOnCategoryTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706051449575_InsertDataInCategoryTable1.resx">
+      <DependentUpon>201706051449575_InsertDataInCategoryTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706051453446_InsertDataInCategoryTable2.resx">
+      <DependentUpon>201706051453446_InsertDataInCategoryTable2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706051545389_RemoveIdentityFromCategory.resx">
+      <DependentUpon>201706051545389_RemoveIdentityFromCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706051554006_DropCategoryForeignKey.resx">
+      <DependentUpon>201706051554006_DropCategoryForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706051555359_DropAndAddIdColumnOfCategoryAndSetForeignKey.resx">
+      <DependentUpon>201706051555359_DropAndAddIdColumnOfCategoryAndSetForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706051557342_DropAndAddIdColumnOfCategoryAndSetForeignKey1.resx">
+      <DependentUpon>201706051557342_DropAndAddIdColumnOfCategoryAndSetForeignKey1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
