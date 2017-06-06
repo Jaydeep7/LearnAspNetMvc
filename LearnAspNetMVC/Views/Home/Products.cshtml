@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LearnAspNetMVC.Models.Item>
+﻿@model IList<LearnAspNetMVC.Models.Item>
 
 @{
     ViewBag.Title = "Products";
@@ -6,9 +6,17 @@
 
 <h2>Products</h2>
 
-@foreach( var item in Model)
+
+@for (int i = 0; i < Model.Count() / 3; i++)
 {
-    <div>
-        <img src="@Url.Content(item.ImagePath)" alt="@item.Description" class="" /> 
+
+    <div class="row">
+        @foreach (var item in Model.Skip(i * 3).Take(3))
+        {
+            <div class="col-md-4">
+                <img src="@Url.Content(item.ImagePath)" alt="@item.Description" class="thumbnail" />
+            </div>
+        }
     </div>
 }
+
