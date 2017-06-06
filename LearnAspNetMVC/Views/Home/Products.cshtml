@@ -1,0 +1,14 @@
+﻿@model IEnumerable<LearnAspNetMVC.Models.Item>
+
+@{
+    ViewBag.Title = "Products";
+}
+
+<h2>Products</h2>
+
+@foreach( var item in Model)
+{
+    <div>
+        <img src="@Url.Content(item.ImagePath)" alt="@item.Description" class="" /> 
+    </div>
+}

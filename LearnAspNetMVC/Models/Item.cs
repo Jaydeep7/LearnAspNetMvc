@@ -24,5 +24,9 @@ namespace LearnAspNetMVC.Models
         public double Stock { get; set; }
 
         public Category Category { get; set; }
+
+        [StringLength(maximumLength:100)]
+        public string ImagePath { get; set; }
+        
     }
 }

@@ -229,6 +229,22 @@
     <Compile Include="Migrations\201706061436340_InsertingDataToItemsTable.Designer.cs">
       <DependentUpon>201706061436340_InsertingDataToItemsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706061534549_UpdateItemsTablesLinkingToApplicationDbContext.cs" />
+    <Compile Include="Migrations\201706061534549_UpdateItemsTablesLinkingToApplicationDbContext.Designer.cs">
+      <DependentUpon>201706061534549_UpdateItemsTablesLinkingToApplicationDbContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706061544159_AddingImagePathColumnToItemModel.cs" />
+    <Compile Include="Migrations\201706061544159_AddingImagePathColumnToItemModel.Designer.cs">
+      <DependentUpon>201706061544159_AddingImagePathColumnToItemModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706061551592_ReInsertingDataToItemTable.cs" />
+    <Compile Include="Migrations\201706061551592_ReInsertingDataToItemTable.Designer.cs">
+      <DependentUpon>201706061551592_ReInsertingDataToItemTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706061554456_ReReInsertingDataToItemTable.cs" />
+    <Compile Include="Migrations\201706061554456_ReReInsertingDataToItemTable.Designer.cs">
+      <DependentUpon>201706061554456_ReReInsertingDataToItemTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -299,6 +315,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Products.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -353,6 +370,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706061436340_InsertingDataToItemsTable.resx">
       <DependentUpon>201706061436340_InsertingDataToItemsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706061534549_UpdateItemsTablesLinkingToApplicationDbContext.resx">
+      <DependentUpon>201706061534549_UpdateItemsTablesLinkingToApplicationDbContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706061544159_AddingImagePathColumnToItemModel.resx">
+      <DependentUpon>201706061544159_AddingImagePathColumnToItemModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706061551592_ReInsertingDataToItemTable.resx">
+      <DependentUpon>201706061551592_ReInsertingDataToItemTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706061554456_ReReInsertingDataToItemTable.resx">
+      <DependentUpon>201706061554456_ReReInsertingDataToItemTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

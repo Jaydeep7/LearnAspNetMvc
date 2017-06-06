@@ -3,11 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using LearnAspNetMVC.Models;
 
 namespace LearnAspNetMVC.Controllers
 {
     public class HomeController : Controller
     {
+
+        private ApplicationDbContext db;
+
+        public HomeController()
+        {
+            db = new ApplicationDbContext();
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -25,6 +34,15 @@ namespace LearnAspNetMVC.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult Products()
+        {
+            ViewBag.Message = "...Products...";
+
+            List<Item> items = db.Items.ToList();
+
+            return View(items);
         }
     }
 }
