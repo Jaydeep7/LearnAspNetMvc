@@ -221,6 +221,14 @@
     <Compile Include="Migrations\201706051730021_InsertDataToCategoryTable.Designer.cs">
       <DependentUpon>201706051730021_InsertDataToCategoryTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706061432348_AddImagePathColumnToItemTable.cs" />
+    <Compile Include="Migrations\201706061432348_AddImagePathColumnToItemTable.Designer.cs">
+      <DependentUpon>201706061432348_AddImagePathColumnToItemTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706061436340_InsertingDataToItemsTable.cs" />
+    <Compile Include="Migrations\201706061436340_InsertingDataToItemsTable.Designer.cs">
+      <DependentUpon>201706061436340_InsertingDataToItemsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -237,6 +245,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Shoes1.jpeg" />
+    <Content Include="Images\Shoes2.jpeg" />
+    <Content Include="Images\Shoes3.jpeg" />
+    <Content Include="Images\Watches1.jpeg" />
+    <Content Include="Images\Watches2.jpeg" />
+    <Content Include="Images\Watches3.jpeg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -333,6 +347,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706051730021_InsertDataToCategoryTable.resx">
       <DependentUpon>201706051730021_InsertDataToCategoryTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706061432348_AddImagePathColumnToItemTable.resx">
+      <DependentUpon>201706061432348_AddImagePathColumnToItemTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706061436340_InsertingDataToItemsTable.resx">
+      <DependentUpon>201706061436340_InsertingDataToItemsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
