@@ -8,9 +8,8 @@ namespace LearnAspNetMVC.ViewModel
 {
     public class ProductsVM
     {
-
-        List<Item> items;
-        List<Category> categories;
+        public List<Item> items { get; set; }
+        public List<Category> categories { get; set; }
 
     }
 }

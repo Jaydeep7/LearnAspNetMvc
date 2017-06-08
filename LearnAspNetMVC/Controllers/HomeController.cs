@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using LearnAspNetMVC.Models;
+using LearnAspNetMVC.ViewModel;
 
 namespace LearnAspNetMVC.Controllers
 {
@@ -36,7 +37,20 @@ namespace LearnAspNetMVC.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult Products()
+        {
+            ViewBag.Message = "...Products...";
+            
+            var productsVm = new ProductsVM();
+            productsVm.items = db.Items.ToList();
+            productsVm.categories = db.Categories.ToList(); 
+
+            return View(productsVm);
+        }
+
+        [HttpPost]
+        public ActionResult Products(FormCollection frm)
         {
             ViewBag.Message = "...Products...";
 

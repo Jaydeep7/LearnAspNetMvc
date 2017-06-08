@@ -249,6 +249,10 @@
     <Compile Include="Migrations\201706081722570_AddedIsSelectedColumnToCategory.Designer.cs">
       <DependentUpon>201706081722570_AddedIsSelectedColumnToCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706081754004_LinkedCategoryTableToApplicationDbContext.cs" />
+    <Compile Include="Migrations\201706081754004_LinkedCategoryTableToApplicationDbContext.Designer.cs">
+      <DependentUpon>201706081754004_LinkedCategoryTableToApplicationDbContext.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -391,6 +395,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706081722570_AddedIsSelectedColumnToCategory.resx">
       <DependentUpon>201706081722570_AddedIsSelectedColumnToCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706081754004_LinkedCategoryTableToApplicationDbContext.resx">
+      <DependentUpon>201706081754004_LinkedCategoryTableToApplicationDbContext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
