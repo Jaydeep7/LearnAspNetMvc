@@ -15,5 +15,7 @@ namespace LearnAspNetMVC.Models
 
         [StringLength(maximumLength: 50)]
         public string Name { get; set; }
+
+        public bool isSelected { get; set; }
     }
 }
