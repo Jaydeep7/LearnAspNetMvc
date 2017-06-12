@@ -51,11 +51,22 @@ namespace LearnAspNetMVC.Controllers
         [HttpPost]
         public ActionResult Products(ProductsVM model)
         {
-            ViewBag.Message = "...Products...";
+            ViewBag.Message = "...Categories...";
 
             List<Item> items = db.Items.ToList();
 
             return View(items);
+        }
+
+        public ActionResult Category()
+        { 
+            return View(db.Categories.ToList());
+        }
+
+        [HttpPost]
+        public ActionResult Category(List<Category> model)
+        {
+            return View(db.Categories.ToList());
         }
     }
 }

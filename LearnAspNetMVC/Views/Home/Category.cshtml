@@ -1,0 +1,34 @@
+﻿@model IEnumerable<LearnAspNetMVC.Models.Category>
+
+@{
+    ViewBag.Title = "Category";
+}
+
+<h2>Category</h2>
+@Html.BeginForm(){
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isSelected)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.CheckBoxFor(modelItem => item.isSelected, new { name = item.Name})
+                @Html.HiddenFor(modelitem => item.Id , new { name = item.Name})
+            </td>
+        </tr>
+    }
+
+</table>
+<input type="submit" value="Submit" />
+}
