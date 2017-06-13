@@ -20,7 +20,7 @@
             {
                 <div class="input-group">
                     @Html.CheckBoxFor(i => it.isSelected, new { Name = "ChkCategory", id = "ChkCategory"+it.Id, @class = "Categories" }) @it.Name
-                    @Html.HiddenFor(i => it.Id, new { name = it.Name })
+                    @Html.HiddenFor(i => it.Name)
 
                 </div>
             }
