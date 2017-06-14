@@ -16,11 +16,14 @@
                     @Html.CheckBox("chkWatch", isChecked: true) Watches
                 </div>*@
 
-            @foreach (var it in Model.categories.ToList())
+            @for(Int16 it  = 0; it < Model.categories.Count(); it++)
             {
                 <div class="input-group">
-                    @Html.CheckBoxFor(i => it.isSelected, new { Name = "ChkCategory", id = "ChkCategory"+it.Id, @class = "Categories" }) @it.Name
-                    @Html.HiddenFor(i => it.Name)
+                    @*@Html.CheckBoxFor(model => Model.categories[it].isSelected, new { name = "ProductsVM.categories[" + it + "]." + Model.categories[it].id ,  id = "ChkCategory"+ Model.categories[it].Id.ToString(), @class = "Categories" }) Model.categories[it].Name
+                    @Html.HiddenFor(model => Model.categories[it].Name)*@
+                    <input type="hidden" name = "@("[1]["+ it + "].Id")" />
+                    <input type="hidden" name = "@("[1][" + it + "].Name")" class="Categories" /> 
+                    <input type="checkbox" name="@("[1][" + it + "].isSelected")" />   @Model.categories[it].Name
 
                 </div>
             }

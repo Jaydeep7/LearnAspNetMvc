@@ -53,9 +53,9 @@ namespace LearnAspNetMVC.Controllers
         {
             ViewBag.Message = "...Categories...";
 
-            List<Item> items = db.Items.ToList();
 
-            return View(items);
+
+            return View(model);
         }
 
         public ActionResult Category()

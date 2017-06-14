@@ -10,7 +10,7 @@ namespace LearnAspNetMVC.ViewModel
     public class ProductsVM
     {
         public IList<Item> items { get; set; }
-        public IList<Category> categories { get; set; }
+        public List<Category> categories { get; set; }
 
     }
 }

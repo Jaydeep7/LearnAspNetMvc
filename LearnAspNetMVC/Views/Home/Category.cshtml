@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LearnAspNetMVC.Models.Category>
+﻿@model IList<LearnAspNetMVC.Models.Category>
 
 @{
     ViewBag.Title = "Category";
@@ -14,25 +14,25 @@
     <div class="form-horizontal">
         <h4>Category</h4>
         <hr />
-        @for(Int16 item = 0;item < Model.Count()-1; item++)
+        @for(Int16 item = 0;item < Model.Count(); item++)
         {
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => Model[item].Id)
+            @*@Html.HiddenFor(model => Model[item].Id )*@
 
             <div class="form-group">
-                @Html.LabelFor(model => item.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => Model[item].Name, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => item.Name, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => item.Name, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => Model[item].Name , new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => Model[item].Name, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => item.isSelected, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => Model[item].isSelected, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     <div class="checkbox">
-                        @Html.EditorFor(model => item.isSelected)
-                        @Html.ValidationMessageFor(model => item.isSelected, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => Model[item].isSelected)
+                        @Html.ValidationMessageFor(model => Model[item].isSelected, "", new { @class = "text-danger" })
                     </div>
                 </div>
             </div>

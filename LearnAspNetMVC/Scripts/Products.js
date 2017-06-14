@@ -1,7 +1,7 @@
 ﻿$(function () {
     console.log('Inside js......');
-    $('.Categories').click(function (e) {
-        console.log(this.id, $("#" + this.id).is(":checked"));
+    $(".Categories").click(function (e) {
+        console.log('Inside function......');
         $.ajax({
             type: "POST",
             url: "/Home/Products",
