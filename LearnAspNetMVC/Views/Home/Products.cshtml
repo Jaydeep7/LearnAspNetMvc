@@ -17,15 +17,15 @@
                     @Html.CheckBox("chkWatch", isChecked: true) Watches
                 </div>*@
 
-            @for(Int16 it  = 0; it < Model.categories.Count(); it++)
+            @for (Int16 it = 0; it < Model.categories.Count(); it++)
             {
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.HiddenFor(model => Model.categories[it].Id )
+                @Html.HiddenFor(model => Model.categories[it].Id)
 
                 <div class="form-group">
                     <div class="col-md-10">
                         @*@Html.EditorFor(model => Model.categories[it].Name, new { htmlAttributes = new { @class = "form-control" } })*@
-                        @Html.HiddenFor( model => Model.categories[it].Name)
+                        @Html.HiddenFor(model => Model.categories[it].Name)
                     </div>
                 </div>
 
@@ -40,24 +40,33 @@
         </div>
 
         @*Loading Items...*@
-        <div class="col-md-10">
+        @*Used partial view instead of this*@
+        @*<div class="col-md-10">
             @for (int i = 0; i < Model.items.Count() / 3; i++)
             {
                 <div class="row">
-                    @{ List<Item>  items = Model.items.Skip(i * 3).Take(3).ToList(); }
-                    @for (int j= 0; j < items.Count() ; j++)
+
+                    @{ List<Item> items = Model.items.Skip(i * 3).Take(3).ToList(); }
+                    @for (int j = 0; j < items.Count(); j++)
                     {
                         @Html.HiddenFor(model => items[j].Id)
                         <div class="col-md-4 col-sm-6 col-xs-12">
                             <img src="@Url.Content(items[j].ImagePath)" alt="@items[j].Description" class="thumbnail" />
                         </div>
+
                     }
                 </div>
             }
+        </div>*@ 
+
+        <div name="ItemsColleciton">
+            @Html.Partial("DisplayItem", Model.items)
+            @* or we can use @Html.RenderPartial() *@
         </div>
+
     </div>
     <input type="submit" value="submit" />
-}
+                        }
 
 
 @section scripts
