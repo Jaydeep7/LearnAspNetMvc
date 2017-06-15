@@ -24,8 +24,7 @@
 
                 <div class="form-group">
                     <div class="col-md-10">
-                        @*@Html.EditorFor(model => Model.categories[it].Name, new { htmlAttributes = new { @class = "form-control" } })*@
-                        @Html.HiddenFor(model => Model.categories[it].Name)
+                        @Html.EditorFor(model => Model.categories[it].Name, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
                 </div>
 
@@ -60,7 +59,7 @@
         </div>*@ 
 
         <div name="ItemsColleciton">
-            @Html.Partial("DisplayItem", Model.items)
+            @Html.Partial("DisplayItem", Model.items.ToList())
             @* or we can use @Html.RenderPartial() *@
         </div>
 

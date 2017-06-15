@@ -58,15 +58,16 @@ namespace LearnAspNetMVC.Controllers
             return View(model);
         }
 
-        public ActionResult Category()
-        { 
-            return View(db.Categories.ToList());
-        }
-
-        [HttpPost]
-        public ActionResult Category(List<Category> model)
+        public PartialViewResult Filter(ProductsVM productsVm)
         {
-            return View(db.Categories.ToList());
+            productsVm.categories.RemoveAll(x => x.isSelected == true);
+
+            var model = from it in db.Items
+                        join ct in productsVm.categories
+                        on it.Category.Id equals ct.Id
+                        select it;
+
+            return PartialView("DisplayItem", model.ToList());
         }
     }
 }

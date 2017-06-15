@@ -1,10 +1,11 @@
 ﻿$(function () {
     console.log('Inside js......');
-    $(".Categories").click(function (e) {
+    $("div.checkbox").click(function () {
         console.log('Inside function......');
         $.ajax({
             type: "POST",
             url: "/Home/Products",
+            //url: "/Home/Filter",
             success: function () {
                 console.log("ajax successfull....");
             },
