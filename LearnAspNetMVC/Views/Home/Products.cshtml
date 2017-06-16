@@ -4,11 +4,11 @@
     ViewBag.Title = "Products";
 }
 <h2>Products</h2>
-@using (Html.BeginForm())
+@using (Html.BeginForm(null, null, FormMethod.Post, new { name = "frm", id = "frm" }))
 {
     <div class="row">
 
-        <div class="form-horizontal">
+        <div class="col-md-3 col-sm-4 col-lg-1 col-xs-6">
             <h4>Category</h4>
             <hr />
             @for (int i = 0; i < @Model.categories.Count(); i++)
@@ -31,12 +31,6 @@
                     </div>
                 </div>
             }
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-default" />
-                </div>
-            </div>
         </div>
 
         @*Loading Items...*@
@@ -59,13 +53,16 @@
                 }
             </div>*@
 
-        <div name="ItemsColleciton">
-            @Html.Partial("DisplayItem", Model.items.ToList())
-        @*     or we can use @Html.RenderPartial()*@ 
-        </div>
+        <div class="col-md-9 col-sm-8 col-lg-11 col-xs-6">
+            <div name="ItemsColleciton">
+                @Html.Partial("DisplayItem", Model.items.ToList())
+                @*     or we can use @Html.RenderPartial()*@
+            </div>
 
+        </div>
+        <input type="submit" value="submit" />
     </div>
-    <input type="submit" value="submit" />
+
 }
 
 

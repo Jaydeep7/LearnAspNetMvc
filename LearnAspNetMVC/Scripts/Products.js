@@ -5,6 +5,9 @@
         $.ajax({
             type: "POST",
             url: "/Home/Products",
+            //datatype: "JSON",
+            //traditional : true,
+            //data: $("#frm").serialize(),
             //url: "/Home/Filter",
             success: function () {
                 console.log("ajax successfull....");
