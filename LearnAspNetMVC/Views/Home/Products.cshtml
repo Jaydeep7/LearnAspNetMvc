@@ -1,5 +1,4 @@
 ﻿@using LearnAspNetMVC.ViewModel;
-@using LearnAspNetMVC.Models;
 @model ProductsVM
 @{
     ViewBag.Title = "Products";
@@ -8,64 +7,66 @@
 @using (Html.BeginForm())
 {
     <div class="row">
-        <div class="col-md-2">
-            @*Loading Categories...*@
-            @*<div class="input-group">
-                    @Html.CheckBox("chkShoes", true) Shoes
-                </div>
-                <div class="input-group">
-                    @Html.CheckBox("chkWatch", isChecked: true) Watches
-                </div>*@
 
-            @for (Int16 it = 0; it < Model.categories.Count(); it++)
+        <div class="form-horizontal">
+            <h4>Category</h4>
+            <hr />
+            @for (int i = 0; i < @Model.categories.Count(); i++)
             {
+
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.HiddenFor(model => Model.categories[it].Id)
+                @Html.HiddenFor(model => Model.categories[i].Id)
 
                 <div class="form-group">
                     <div class="col-md-10">
-                        @Html.EditorFor(model => Model.categories[it].Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.HiddenFor(model => Model.categories[i].Name, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-10">
                         <div class="checkbox">
-                            @Html.EditorFor(model => Model.categories[it].isSelected) @Model.categories[it].Name
+                            @Html.EditorFor(model => Model.categories[i].isSelected) @Model.categories[i].Name
                         </div>
                     </div>
                 </div>
             }
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
         </div>
 
         @*Loading Items...*@
         @*Used partial view instead of this*@
         @*<div class="col-md-10">
-            @for (int i = 0; i < Model.items.Count() / 3; i++)
-            {
-                <div class="row">
+                @for (int i = 0; i < Model.items.Count() / 3; i++)
+                {
+                    <div class="row">
 
-                    @{ List<Item> items = Model.items.Skip(i * 3).Take(3).ToList(); }
-                    @for (int j = 0; j < items.Count(); j++)
-                    {
-                        @Html.HiddenFor(model => items[j].Id)
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <img src="@Url.Content(items[j].ImagePath)" alt="@items[j].Description" class="thumbnail" />
-                        </div>
+                        @{ List<Item> items = Model.items.Skip(i * 3).Take(3).ToList(); }
+                        @for (int j = 0; j < items.Count(); j++)
+                        {
+                            @Html.HiddenFor(model => items[j].Id)
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <img src="@Url.Content(items[j].ImagePath)" alt="@items[j].Description" class="thumbnail" />
+                            </div>
 
-                    }
-                </div>
-            }
-        </div>*@ 
+                        }
+                    </div>
+                }
+            </div>*@
 
         <div name="ItemsColleciton">
             @Html.Partial("DisplayItem", Model.items.ToList())
-            @* or we can use @Html.RenderPartial() *@
+        @*     or we can use @Html.RenderPartial()*@ 
         </div>
 
     </div>
     <input type="submit" value="submit" />
-                        }
+}
 
 
 @section scripts

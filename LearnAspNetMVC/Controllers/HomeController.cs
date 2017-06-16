@@ -69,5 +69,22 @@ namespace LearnAspNetMVC.Controllers
 
             return PartialView("DisplayItem", model.ToList());
         }
+
+        public ActionResult Category()
+        {
+            ViewBag.Message = "...Categories...";
+            return View(db.Categories.ToList());
+        }
+
+        [HttpPost]
+        public ActionResult Category(List<Category> model)
+        {
+            ViewBag.Message = "...Categories...";
+
+
+
+            return View(model);
+        }
+
     }
 }
