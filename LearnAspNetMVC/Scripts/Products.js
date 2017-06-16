@@ -3,12 +3,14 @@
     $("div.checkbox").click(function () {
         console.log('Inside function......');
         $.ajax({
-            type: "POST",
-            url: "/Home/Products",
+            type: "GET",
+            //url: "/Home/Products",
+            url: "/Home/Filter",
             //datatype: "JSON",
             //traditional : true,
-            //data: $("#frm").serialize(),
-            //url: "/Home/Filter",
+            data: $("#frm").serialize(),
+            UpdateTargetId: "ItemsColleciton",
+            //InsertionMode : "InsertionMode.Replace",
             success: function () {
                 console.log("ajax successfull....");
             },

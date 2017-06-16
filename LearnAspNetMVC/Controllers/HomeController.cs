@@ -60,14 +60,26 @@ namespace LearnAspNetMVC.Controllers
 
         public PartialViewResult Filter(ProductsVM productsVm)
         {
-            productsVm.categories.RemoveAll(x => x.isSelected == true);
+            try
+            {
+                productsVm.categories.RemoveAll(x => x.isSelected == false);
+                //var model = (from it in db.Items
+                //            join ct in productsVm.categories
+                //            on it.Category.Id equals ct.Id
+                //            select it).ToList();
+                HashSet<int> categories = new HashSet<int>(productsVm.categories.Select(x => x.Id));
 
-            var model = from it in db.Items
-                        join ct in productsVm.categories
-                        on it.Category.Id equals ct.Id
-                        select it;
+                List<Item> items = db.Items.ToList();
+                items.RemoveAll(x => categories.Contains(x.Category.Id));
 
-            return PartialView("DisplayItem", model.ToList());
+                return PartialView("DisplayItem", items);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
 
         public ActionResult Category()
