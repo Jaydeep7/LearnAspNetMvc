@@ -63,16 +63,11 @@ namespace LearnAspNetMVC.Controllers
             try
             {
                 productsVm.categories.RemoveAll(x => x.isSelected == false);
-                //var model = (from it in db.Items
-                //            join ct in productsVm.categories
-                //            on it.Category.Id equals ct.Id
-                //            select it).ToList();
-                HashSet<int> categories = new HashSet<int>(productsVm.categories.Select(x => x.Id));
+                var ids = productsVm.categories.Select(c => c.Id);
 
-                List<Item> items = db.Items.ToList();
-                items.RemoveAll(x => categories.Contains(x.Category.Id));
+                var model = db.Items.Where(x => ids.Contains(x.Category.Id)).ToList();
 
-                return PartialView("DisplayItem", items);
+                return PartialView("DisplayItem",model);
             }
             catch (Exception)
             {
