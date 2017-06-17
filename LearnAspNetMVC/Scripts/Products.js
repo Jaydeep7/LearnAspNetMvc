@@ -9,7 +9,7 @@
             //datatype: "JSON",
             //traditional : true,
             data: $("#frm").serialize(),
-            UpdateTargetId: "ItemsColleciton",
+            //UpdateTargetId: "ItemsColleciton",
             //InsertionMode : "InsertionMode.Replace",
             success: function () {
                 console.log("ajax successfull....");

@@ -4,7 +4,15 @@
     ViewBag.Title = "Products";
 }
 <h2>Products</h2>
-@using (Html.BeginForm(null, null, FormMethod.Post, new { name = "frm", id = "frm" }))
+
+@using (Ajax.BeginForm("Filter", "Home", 
+                new AjaxOptions
+                {
+                    Url = "",
+                    HttpMethod = "POST",
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "ItemsColleciton"
+                }))
 {
     <div class="row">
 
@@ -68,5 +76,5 @@
 
 @section scripts
 {
-    <script src="~/Scripts/Products.js"></script>
+ @*   <script src="~/Scripts/Products.js"></script>*@
 }
