@@ -58,6 +58,7 @@ namespace LearnAspNetMVC.Controllers
             return View(model);
         }
 
+        [HttpPost]
         public PartialViewResult Filter(ProductsVM productsVm)
         {
             try
@@ -67,7 +68,7 @@ namespace LearnAspNetMVC.Controllers
 
                 var model = db.Items.Where(x => ids.Contains(x.Category.Id)).ToList();
 
-                return PartialView("DisplayItem",model);
+                return PartialView("DisplayItem","partial view loaded.....");
             }
             catch (Exception)
             {
