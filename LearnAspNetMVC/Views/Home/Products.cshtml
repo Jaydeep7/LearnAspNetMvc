@@ -6,6 +6,8 @@
 
 <h2>Products</h2>
 
+@{ Html.RenderPartial("TestPartial"); }
+
 @using (Html.BeginForm(null, null,FormMethod.Post, new { id = "frm" }))
 {
     <div class="row">

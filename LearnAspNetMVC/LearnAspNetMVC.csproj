@@ -328,6 +328,7 @@
     <Content Include="Views\Home\Products.cshtml" />
     <Content Include="Views\Shared\DisplayItem.cshtml" />
     <Content Include="Views\Home\Category.cshtml" />
+    <Content Include="Views\Home\TestPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

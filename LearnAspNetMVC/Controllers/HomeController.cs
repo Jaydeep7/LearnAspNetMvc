@@ -94,5 +94,11 @@ namespace LearnAspNetMVC.Controllers
             return View(model);
         }
 
+        public PartialViewResult TestPartial()
+        {
+            ViewBag.msg = "This is from ViewBag.msg";
+            return PartialView();
+        }
+
     }
 }
