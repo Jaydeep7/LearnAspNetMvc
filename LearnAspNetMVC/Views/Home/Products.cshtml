@@ -8,63 +8,62 @@
 
 @{ Html.RenderPartial("TestPartial"); }
 
-@using (Html.BeginForm(null, null,FormMethod.Post, new { id = "frm" }))
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frm" }))
 {
     <div class="row">
 
-    <div class="col-md-3 col-sm-4 col-lg-1 col-xs-6">
-        <h4>Category</h4>
-        <hr />
-        @for (int i = 0; i < @Model.categories.Count(); i++)
-        {
+        <div class="col-md-3 col-sm-4 col-lg-1 col-xs-6">
+            <h4>Category</h4>
+            <hr />
+            @for (int i = 0; i < @Model.categories.Count(); i++)
+            {
 
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => Model.categories[i].Id)
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => Model.categories[i].Id)
 
-            <div class="form-group">
-                <div class="col-md-10">
-                    @Html.HiddenFor(model => Model.categories[i].Name, new { htmlAttributes = new { @class = "form-control" } })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => Model.categories[i].isSelected) @Model.categories[i].Name
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.HiddenFor(model => Model.categories[i].Name, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
                 </div>
-            </div>
-        }
-    </div>
 
-    @*Loading Items...*@
-    @*Used partial view instead of this*@
-    @*<div class="col-md-10">
-            @for (int i = 0; i < Model.items.Count() / 3; i++)
-            {
-                <div class="row">
-
-                    @{ List<Item> items = Model.items.Skip(i * 3).Take(3).ToList(); }
-                    @for (int j = 0; j < items.Count(); j++)
-                    {
-                        @Html.HiddenFor(model => items[j].Id)
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <img src="@Url.Content(items[j].ImagePath)" alt="@items[j].Description" class="thumbnail" />
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => Model.categories[i].isSelected) @Model.categories[i].Name
                         </div>
-
-                    }
+                    </div>
                 </div>
             }
-        </div>*@
-
-    <div class="col-md-9 col-sm-8 col-lg-11 col-xs-6">
-        <div name="ItemsColleciton">
-            @Html.Partial("DisplayItem", Model.items.ToList())
-            @*     or we can use @Html.RenderPartial()*@
         </div>
-    </div>
 
-    <input type="submit" value="submit" />
+        @*Loading Items...*@
+        @*Used partial view instead of this*@
+        @*<div class="col-md-10">
+                @for (int i = 0; i < Model.items.Count() / 3; i++)
+                {
+                    <div class="row">
+
+                        @{ List<Item> items = Model.items.Skip(i * 3).Take(3).ToList(); }
+                        @for (int j = 0; j < items.Count(); j++)
+                        {
+                            @Html.HiddenFor(model => items[j].Id)
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <img src="@Url.Content(items[j].ImagePath)" alt="@items[j].Description" class="thumbnail" />
+                            </div>
+                        }
+                    </div>
+                }
+            </div>*@
+
+        <div class="col-md-9 col-sm-8 col-lg-11 col-xs-6">
+            <div name="ItemsColleciton">
+                @Html.Partial("DisplayItem", Model.items.ToList())
+                @*     or we can use @Html.RenderPartial()*@
+            </div>
+        </div>
+
+        <input type="submit" value="submit" />
 
     </div>
 

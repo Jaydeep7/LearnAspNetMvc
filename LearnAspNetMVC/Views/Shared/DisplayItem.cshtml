@@ -9,9 +9,9 @@
             @{ List<Item> items = Model.Skip(i * 3).Take(3).ToList(); }
             @for (int j = 0; j < items.Count(); j++)
             {
-                @Html.HiddenFor(model => items[j].Id)
+                @*@Html.Hidden(model => items[j].Id)*@
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                    <img src="@Url.Content(items[j].ImagePath)" alt="@items[j].Description" class="thumbnail" />
+                    <img src="@Url.Content(items[j].ImagePath)" alt="@items[j].Description" class="thumbnail" itemIds = "@items[j].Id" />
                 </div>
 
             }
