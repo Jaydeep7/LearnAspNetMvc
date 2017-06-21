@@ -1,6 +1,6 @@
 ﻿$(function () {
     console.log('Inside js......');
-    console.log($("#frm").serialize());
+    //console.log($("#frm").serialize());
     $("div.checkbox").click(function () {
         console.log('Inside function......');
         $.ajax({
@@ -13,8 +13,11 @@
             
             //UpdateTargetId: "ItemsColleciton",
             //InsertionMode : "InsertionMode.Replace",
-            success: function () {
+            success: function (data) {
                 console.log('ajax success....');
+                //console.log('data is ' + data);
+                $('#ItemsColleciton').html(data);
+
             },
             error: function () {
                 console.log("ajax error....");

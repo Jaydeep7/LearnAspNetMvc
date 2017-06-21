@@ -49,7 +49,7 @@ namespace LearnAspNetMVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult Products(List<Category> categories, string[] itemIds)
+        public ActionResult Products(List<Category> categories, List<string> itemIds)
         {
             ViewBag.Message = "...Categories...";
 
@@ -66,7 +66,7 @@ namespace LearnAspNetMVC.Controllers
 
                 var model = db.Items.Where(x => ids.Contains(x.Category.Id)).ToList();
 
-                return PartialView("DisplayItem","partial view loaded.....");
+                return PartialView("DisplayItem",model);
             }
             catch (Exception)
             {
