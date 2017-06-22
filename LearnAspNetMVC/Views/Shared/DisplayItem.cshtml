@@ -16,6 +16,7 @@
                         <img src="@Url.Content(items[j].ImagePath)" alt="@items[j].Description" class="thumbnail" name="itemIds" id="@items[j].Id" />
                         @*@Html.HiddenFor( model => items[j].Id)*@
                         <input type="hidden" name="ItemIds" id="@items[j].Id" value="@items[j].Id" />
+                        <p>Price : @items[j].Price.ToString("c") </p>
                     </div>
 
                 }
@@ -24,6 +25,6 @@
     </div>
                     }
                     else
-{
-    <h1 class="alert-danger alert text-center"> .....Oops no items found.....</h1>
-}
+                    {
+                        <h1 class="alert-danger alert text-center"> .....Oops no items found.....</h1>
+                    }
