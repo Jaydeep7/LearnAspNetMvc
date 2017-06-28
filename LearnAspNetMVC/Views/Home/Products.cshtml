@@ -1,4 +1,5 @@
 ﻿@using LearnAspNetMVC.ViewModel;
+@using LearnAspNetMVC.Models;
 @model ProductsVM
 @{
     ViewBag.Title = "Products";
@@ -56,17 +57,38 @@
                 }
             </div>*@
 
-        <div class="col-md-9 col-sm-8 col-lg-11 col-xs-6">
-            <div id="ItemsColleciton">
-                @Html.Partial("DisplayItem", Model.items.ToList())
-                @*     or we can use @Html.RenderPartial()*@
-            </div>
-            
+        @*<div class="col-md-9 col-sm-8 col-lg-11 col-xs-6">
+                <div id="ItemsColleciton">
+                    @Html.Partial("DisplayItem", Model.items.ToList())
+                         or we can use @Html.RenderPartial()
+                </div>
+
+            </div>*@
+
+        <div class="col-md-8">
+            @{
+                if (Model.items.Count > 0)
+                {
+                    for (int i = 0; i < Model.items.Count() / 3; i++)
+                    {
+
+                         List<Item> items = Model.items.Skip(i * 3).Take(3).ToList(); 
+
+                        for (int j = 0; j < items.Count(); j++)
+                        {
+                            @Html.Partial("DisplayItem", items[j]);
+                        }
+                    }
+                }
+                else
+                {
+                    <h1 class="alert-danger alert text-center"> .....Oops no items found.....</h1>
+                }
+            }
         </div>
 
-        <input type="submit" value="submit" class="btn btn-primary " />
-        
     </div>
+    <input type="submit" value="submit" class="btn btn-primary" />
 
 }
 

@@ -1,34 +1,13 @@
 ﻿@using LearnAspNetMVC.Models
-@model List<LearnAspNetMVC.Models.Item>
+@model Item
 
-@if (Model.Count > 0)
+
+@using (Html.BeginForm("AddToCart", "Cart", FormMethod.Post))
 {
-    <div class="col-md-10">
-        @for (int i = 0; i < Model.Count() / 3; i++)
-        {
-            <div class="row">
-
-                @{ List<Item> items = Model.Skip(i * 3).Take(3).ToList(); }
-                @for (int j = 0; j < items.Count(); j++)
-                {
-                    @Html.BeginForm(){
-                        @*@Html.Hidden(model => items[j].Id)*@
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <img src="@Url.Content(items[j].ImagePath)" alt="@items[j].Description" class="thumbnail" name="itemIds" id="@items[j].Id" />
-                            @*@Html.HiddenFor( model => items[j].Id)*@
-                            <input type="hidden" name="ItemIds" id="@items[j].Id" value="@items[j].Id" />
-                            <p>Price : @items[j].Price.ToString("c") </p>
-                        </div>
-                        <p>
-                            <input type="submit" value="Add To Cart" class="btn btn-primary "  />
-                        </p>
-                    }
-                }
-            </div>
-                    }
-    </div>
-                    }
-                    else
-                    {
-                        <h1 class="alert-danger alert text-center"> .....Oops no items found.....</h1>
-                    }
+    <img src="@Url.Content(Model.ImagePath)" alt="@Model.Description" class="thumbnail" name="itemIds" id="@Model.Id" />
+    <input type="hidden" name="ItemIds" id="@Model.Id" value="@Model.Id" />
+    <p>Price : @Model.Price.ToString("c") </p>
+    <p>
+        <input type="submit" value="Add To Cart" class="btn btn-primary pull-right" />
+    </p>
+}
