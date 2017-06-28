@@ -4,7 +4,7 @@
     $("div.checkbox").click(function () {
         console.log('Inside function......');
         $.ajax({
-            type: "POST",
+            type: "GET",
             //url: "/Home/Products",
             datatype: "JSON",
             traditional: true,
@@ -15,7 +15,7 @@
             //InsertionMode : "InsertionMode.Replace",
             success: function (data) {
                 console.log('ajax success....');
-                //console.log('data is ' + data);
+                console.log('data is ' + data);
                 $('#ItemsColleciton').html(data);
 
             },

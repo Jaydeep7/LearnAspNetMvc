@@ -38,26 +38,36 @@ namespace LearnAspNetMVC.Controllers
         }
 
         [HttpGet]
-        public ActionResult Products()
+        public ActionResult Products(List<Category> categories, List<string> itemIds)
         {
             ViewBag.Message = "...Products...";
 
             ProductsVM productsVm = new ProductsVM();
-            productsVm.items = db.Items.ToList();
-            productsVm.categories = db.Categories.ToList();
+            if (categories == null && itemIds == null)
+            {
+                productsVm.items = db.Items.ToList();
+                productsVm.categories = db.Categories.ToList();
+            }
+            else
+            {
+                categories.RemoveAll(x => x.isSelected == false);
+                var categoryIds = categories.Select(x => x.Id);
+
+                productsVm.items = db.Items.Where(x => categoryIds.Contains(x.Category.Id)).ToList();
+                productsVm.categories = db.Categories.ToList();
+
+            }
             return View(productsVm);
         }
 
-        [HttpPost]
-        public ActionResult Products(List<Category> categories, List<string> itemIds)
-        {
-            ViewBag.Message = "...Categories...";
-
-            return View();
-        }
+        //[HttpPost]
+        //public ActionResult Products(List<Category> categories, List<string> itemIds)
+        //{
+        //    return View(model);
+        //}
 
         [HttpPost]
-        public PartialViewResult Filter(ProductsVM productsVm)
+        public ActionResult Filter(ProductsVM productsVm)
         {
             try
             {
@@ -66,7 +76,7 @@ namespace LearnAspNetMVC.Controllers
 
                 var model = db.Items.Where(x => ids.Contains(x.Category.Id)).ToList();
 
-                return PartialView("DisplayItem",model);
+                return View("Products", model);
             }
             catch (Exception)
             {
