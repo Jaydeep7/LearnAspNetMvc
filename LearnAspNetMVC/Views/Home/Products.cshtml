@@ -31,7 +31,7 @@
                 <div class="form-group">
                     <div class="col-md-10">
                         <div class="checkbox">
-                            @Html.EditorFor(model => Model.categories[i].isSelected) @Model.categories[i].Name
+                            @Html.CheckBoxFor(model => Model.categories[i].isSelected) @Model.categories[i].Name
                         </div>
                     </div>
                 </div>
@@ -65,26 +65,8 @@
 
             </div>*@
 
-        <div class="col-md-8 ItemsColleciton">
-            @{
-                if (Model.items.Count > 0)
-                {
-                    for (int i = 0; i < Model.items.Count() / 3; i++)
-                    {
-
-                         List<Item> items = Model.items.Skip(i * 3).Take(3).ToList(); 
-
-                        for (int j = 0; j < items.Count(); j++)
-                        {
-                            @Html.Partial("DisplayItem", items[j]);
-                        }
-                    }
-                }
-                else
-                {
-                    <h1 class="alert-danger alert text-center"> .....Oops no items found.....</h1>
-                }
-            }
+        <div class="col-md-8" id="ItemsColleciton">
+            @Html.Partial("DisplayItem", Model.items)
         </div>
 
     </div>

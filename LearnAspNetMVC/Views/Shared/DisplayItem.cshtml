@@ -1,13 +1,34 @@
 ﻿@using LearnAspNetMVC.Models
-@model Item
+@model List<Item>
 
+@{
+    if (Model.Count > 0)
+    {
+        for (int j = 0; j < Model.Count(); j++)
+        {
+            <div class="row">
 
-@using (Html.BeginForm("AddToCart", "Cart", FormMethod.Post))
-{
-    <img src="@Url.Content(Model.ImagePath)" alt="@Model.Description" class="thumbnail" name="itemIds" id="@Model.Id" />
-    <input type="hidden" name="ItemIds" id="@Model.Id" value="@Model.Id" />
-    <p>Price : @Model.Price.ToString("c") </p>
-    <p>
-        <input type="submit" value="Add To Cart" class="btn btn-primary pull-right" />
-    </p>
+                @using (Html.BeginForm("AddToCart", "Cart", FormMethod.Post))
+                    {
+                        <div class="col-md-10">
+                            <img src="@Url.Content(Model[j].ImagePath)" alt="@Model[j].Description" class="thumbnail" name="itemIds" id="@Model[j].Id" />
+                            <input type="hidden" name="ItemIds" id="@Model[j].Id" value="@Model[j].Id" />
+                            <p class="alert alert-info">Price : @Model[j].Price.ToString("c") </p>
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                @*<input type="submit" value="Add To Cart"  />*@
+                                
+                                @Html.ActionLink("Add To Cart", "AddToCart","Cart", new  { id = Model[j].Id, returnUrl = Request.Url }, new { @class = "btn btn-success" })
+                            </p>
+                        </div>
+                }
+            </div>
+        }
+    }
+    else
+    {
+        <h1 class="alert-danger alert text-center"> .....Oops no items found.....</h1>
+    }
 }
+

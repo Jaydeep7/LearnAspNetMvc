@@ -9,9 +9,9 @@ namespace LearnAspNetMVC.Controllers
     public class CartController : Controller
     {
         // GET: Cart
-        public ActionResult AddToCart()
+        public ActionResult AddToCart(int id, string returnUrl)
         {
-            return View();
+            return Redirect(returnUrl);
         }
     }
 }
