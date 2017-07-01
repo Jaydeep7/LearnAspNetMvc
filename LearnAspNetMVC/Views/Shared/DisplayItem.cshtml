@@ -14,7 +14,8 @@
                             <img src="@Url.Content(Model[j].ImagePath)" alt="@Model[j].Description" class="thumbnail" name="itemIds" id="@Model[j].Id"  />
                             <input type="hidden" name="ItemIds" id="@Model[j].Id" value="@Model[j].Id" />
                             <p class="alert alert-info">Price : @Model[j].Price.ToString("c") </p>
-                            <input type="hidden" name="Price" id ="Price" value=@Model[j].Price />
+                            @*<input type="hidden" name="Price[@j]" id ="Price[@j]" value=@Model[j].Price />*@
+                            @Html.HiddenFor(item => Model[j].Price, new { id = "Price" })
                         </div>
                         <div class="col-md-2">
                             <p>

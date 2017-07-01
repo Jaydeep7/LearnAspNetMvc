@@ -27,6 +27,6 @@ namespace LearnAspNetMVC.Models
 
         [StringLength(maximumLength:100)]
         public string ImagePath { get; set; }
-        
+
     }
 }
